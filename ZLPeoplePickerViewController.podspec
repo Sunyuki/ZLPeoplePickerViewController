@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.screenshots  = "https://raw.githubusercontent.com/zhxnlai/ZLPeoplePickerViewController/master/Previews/personVCPreview.gif", "https://raw.githubusercontent.com/zhxnlai/ZLPeoplePickerViewController/master/Previews/emailsPreview.gif"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Zhixuan Lai" => "zhxnlai@gmail.com" }
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, “7.0”
   s.source       = { :git => "https://github.com/zhxnlai/ZLPeoplePickerViewController.git", :tag => "0.0.2" }
   s.source_files = "ZLPeoplePickerViewController", "ZLPeoplePickerViewController/**/*.{h,m}"
   s.frameworks   = "UIKit", "AddressBook", "AddressBookUI"
