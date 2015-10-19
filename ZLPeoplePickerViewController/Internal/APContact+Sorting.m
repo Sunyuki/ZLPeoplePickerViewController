@@ -10,17 +10,17 @@
 
 @implementation APContact (Sorting)
 - (NSString *)firstNameOrCompositeName {
-    if (self.firstName) {
-        return self.firstName;
+    if (self.name.firstName) {
+        return self.name.firstName;
     }
-    return self.compositeName;
+    return self.name.compositeName;
 }
 
 - (NSString *)lastNameOrCompositeName {
-    if (self.lastName) {
-        return self.lastName;
+    if (self.name.lastName) {
+        return self.name.lastName;
     }
-    return self.compositeName;
+    return self.name.compositeName;
 }
 
 - (NSArray *)linkedContacts {
