@@ -40,7 +40,7 @@
 
         // add new contact
         SEL selector = @selector(lastName);
-        if (contact.lastName.length == 0) {
+        if (contact.name.lastName.length == 0) {
             selector = @selector(compositeName);
         }
         NSInteger index = [[LRIndexedCollationWithSearch currentCollation]
@@ -172,11 +172,11 @@
 #pragma mark - ()
 - (void)configureCell:(UITableViewCell *)cell forContact:(APContact *)contact {
     NSString *stringToHightlight =
-        contact.lastName ? contact.lastName : contact.compositeName;
+        contact.name.lastName ? contact.name.lastName : contact.name.compositeName;
     NSRange rangeToHightlight =
-        [contact.compositeName rangeOfString:stringToHightlight];
+        [contact.name.compositeName rangeOfString:stringToHightlight];
     NSMutableAttributedString *attributedString = [
-        [NSMutableAttributedString alloc] initWithString:contact.compositeName];
+        [NSMutableAttributedString alloc] initWithString:contact.name.compositeName];
 
     [attributedString beginEditing];
     [attributedString addAttribute:NSFontAttributeName
