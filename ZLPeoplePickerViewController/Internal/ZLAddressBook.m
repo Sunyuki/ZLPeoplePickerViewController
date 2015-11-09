@@ -9,6 +9,7 @@
 #import "ZLAddressBook.h"
 #import "APAddressBook.h"
 #import "APContact.h"
+#import "APContact+Sorting.h"
 
 NSString *const ZLAddressBookDidChangeNotification =
     @"ZLAddressBookDidChangeNotification";
@@ -43,9 +44,9 @@ NSString *const ZLAddressBookDidChangeNotification =
 - (void)loadContacts:(void (^)(BOOL succeeded, NSError *error))completionBlock {
     __weak __typeof(self) weakSelf = self;
     self.addressBook.fieldsMask =
-        APContactFieldName | APContactFieldPhonesOnly |
-        APContactFieldThumbnail | APContactFieldLinkedRecordIDs |
-        APContactFieldEmailsOnly | APContactFieldAddresses;
+    APContactFieldName | APContactFieldPhonesWithLabels |
+    APContactFieldThumbnail |
+    APContactFieldEmailsWithLabels | APContactFieldAddresses;
     self.addressBook.filterBlock = ^BOOL(APContact *contact) {
         return contact.name.compositeName != nil;
     };

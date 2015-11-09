@@ -10,10 +10,15 @@
 
 @interface APContact (Sorting)
 
+@property (nullable, nonatomic, strong, readonly) NSString *firstName;
+@property (nullable, nonatomic, strong, readonly) NSString *lastName;
+@property (nullable, nonatomic, strong, readonly) NSString *middleName;
+@property (nullable, nonatomic, strong, readonly) NSString *compositeName;
+
 //@property (strong,nonatomic) NSArray *santrizedPhones;
 
-- (NSString *)firstNameOrCompositeName;
-- (NSString *)lastNameOrCompositeName;
+- (NSString  * _Nullable )firstNameOrCompositeName;
+- (NSString  * _Nullable )lastNameOrCompositeName;
 //- (NSArray *)linkedContacts;
 
 @end
